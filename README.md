@@ -29,6 +29,24 @@ Place this skill under your Codex skills directory and invoke it when you want t
 
 Common trigger phrases include: `submit changes`, `提交`, `送出`, and `提交變更`.
 
+## Example
+
+Example user request:
+
+```text
+submit changes, it is a initial commit.
+write a readme.
+publish to a public repo with using github cli
+```
+
+Expected agent behavior:
+
+1. Inspect git status and detect staged/unstaged files.
+2. Create or update `README.md` as requested.
+3. Commit with a concise Conventional Commit message.
+4. Publish to GitHub using `gh repo create ... --public --source=. --push`.
+5. Optionally create and push a version tag.
+
 ## Notes
 
 This repository contains only the skill definition and references. It does not ship runnable application code.
