@@ -2,6 +2,10 @@
 
 A Codex skill that standardizes how code changes are submitted and released.
 
+## Brief introduction
+
+`submit-changes` is an agent skill for repositories that need a predictable submit process. It helps agents inspect local changes, apply version/release updates, and publish commits/tags with consistent conventions.
+
 ## What this skill does
 
 The skill guides an agent through a safe, repeatable submit workflow:
