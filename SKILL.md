@@ -72,6 +72,9 @@ Load these only when needed:
 ### 8) Commit and tag (do not push yet)
 
 - Compose a concise commit message per references/commit-messages.md.
+- Derive `type` and `subject` from the actual staged diff, not from the target version.
+- Never use version-only commit subjects such as `feat: vX.Y.Z`.
+- In release-only mode, use a release maintenance message (for example `chore(release): bump version and update changelog`) instead of a feature message.
 - If in release-only mode, stage only version files, `CHANGELOG.md`, and README updates (if any).
 - If in commit-staged mode, include the staged changes plus version/changelog/README updates if applicable.
 - Create the version tag locally.
