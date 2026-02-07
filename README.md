@@ -11,12 +11,11 @@ A Codex skill that standardizes how code changes are submitted and released.
 The skill guides an agent through a safe, repeatable submit workflow:
 
 1. Inspect current git changes and staging state.
-2. Choose a submit mode (release-only or staged commit).
-3. Identify version/tag baseline and change range.
-4. Decide and apply semantic version updates.
-5. Update release documentation (`CHANGELOG.md`, `README.md` when needed).
+2. Identify version/tag baseline and always read release scope from last tag to `HEAD`.
+3. Decide and apply semantic version updates.
+4. Update release documentation (`CHANGELOG.md`, `README.md` when needed).
+5. Update `AGENTS.md` before commit/push when workflow rules need syncing.
 6. Commit, tag, and push changes.
-7. Keep `AGENTS.md` aligned with the latest workflow expectations.
 
 ## Repository layout
 
