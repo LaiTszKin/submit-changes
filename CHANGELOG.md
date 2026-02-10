@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog.
 
+## [0.1.3] - 2026-02-10
+
+### Changed
+
+- Added explicit guidance to infer and share a preferred semver bump before user confirmation.
+- Required submit prompts to include a recommended target version with a brief rationale.
+- Updated README workflow description to reflect recommendation-first version selection.
+
 ## [0.1.2] - 2026-02-07
 
 ### Changed
@@ -24,3 +32,4 @@ The format is based on Keep a Changelog.
 
 [0.1.1]: https://github.com/LaiTszKin/submit-changes/compare/v0.1.0...v0.1.1
 [0.1.2]: https://github.com/LaiTszKin/submit-changes/compare/v0.1.1...v0.1.2
+[0.1.3]: https://github.com/LaiTszKin/submit-changes/compare/v0.1.2...v0.1.3

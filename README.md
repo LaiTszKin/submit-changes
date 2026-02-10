@@ -12,7 +12,7 @@ The skill guides an agent through a safe, repeatable submit workflow:
 
 1. Inspect current git changes and staging state.
 2. Identify version/tag baseline and always read release scope from last tag to `HEAD`.
-3. Decide and apply semantic version updates.
+3. Propose a preferred semantic version bump/version, confirm with the user, then apply updates.
 4. Update release documentation (`CHANGELOG.md`, `README.md` when needed).
 5. Update `AGENTS.md` before commit/push when workflow rules need syncing.
 6. Commit, tag, and push changes.
