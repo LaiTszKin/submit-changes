@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 The format is based on Keep a Changelog.
 
+## [0.2.0] - 2026-02-15
+
+### Changed
+
+- Added an explicit dependency contract requiring `edge-case-test-fixer` then `code-simplifier` for code-affecting releases.
+- Added a docs-only classification path so documentation-only changes can skip both dependency skills.
+- Reordered the submit workflow to run dependency checks before version/changelog/readme/agent document updates.
+
 ## [0.1.3] - 2026-02-10
 
 ### Changed
@@ -33,3 +41,4 @@ The format is based on Keep a Changelog.
 [0.1.1]: https://github.com/LaiTszKin/submit-changes/compare/v0.1.0...v0.1.1
 [0.1.2]: https://github.com/LaiTszKin/submit-changes/compare/v0.1.1...v0.1.2
 [0.1.3]: https://github.com/LaiTszKin/submit-changes/compare/v0.1.2...v0.1.3
+[0.2.0]: https://github.com/LaiTszKin/submit-changes/compare/v0.1.3...v0.2.0

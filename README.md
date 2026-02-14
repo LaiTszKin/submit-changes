@@ -6,16 +6,21 @@ A Codex skill that standardizes how code changes are submitted and released.
 
 `submit-changes` is an agent skill for repositories that need a predictable submit process. It helps agents inspect local changes, apply version/release updates, and publish commits/tags with consistent conventions.
 
+This workflow has explicit dependencies on `edge-case-test-fixer` and `code-simplifier` for code-affecting changes.
+
 ## What this skill does
 
 The skill guides an agent through a safe, repeatable submit workflow:
 
 1. Inspect current git changes and staging state.
 2. Identify version/tag baseline and always read release scope from last tag to `HEAD`.
-3. Propose a preferred semantic version bump/version, confirm with the user, then apply updates.
-4. Update release documentation (`CHANGELOG.md`, `README.md` when needed).
-5. Update `AGENTS.md` before commit/push when workflow rules need syncing.
-6. Commit, tag, and push changes.
+3. Propose a preferred semantic version bump/version and confirm with the user.
+4. Classify change type (`code-affecting` vs `docs-only`).
+5. If `code-affecting`, run `edge-case-test-fixer` then `code-simplifier` before release edits.
+6. If `docs-only`, skip those two dependencies.
+7. Update version files and release documentation (`CHANGELOG.md`, `README.md` when needed).
+8. Update `AGENTS.md` before commit/push when workflow rules need syncing.
+9. Commit, tag, and push changes.
 
 ## Repository layout
 
@@ -45,10 +50,13 @@ publish to a public repo with using github cli
 Expected agent behavior:
 
 1. Inspect git status and detect staged/unstaged files.
-2. Create or update `README.md` as requested.
-3. Commit with a concise Conventional Commit message.
-4. Publish to GitHub using `gh repo create ... --public --source=. --push`.
-5. Optionally create and push a version tag.
+2. Confirm release version/tag with the user.
+3. Classify whether changes are code-affecting or docs-only.
+4. If code-affecting, run `edge-case-test-fixer` and then `code-simplifier`.
+5. Create or update release docs (`README.md`, `CHANGELOG.md`) as needed.
+6. Commit with a concise Conventional Commit message.
+7. Publish to GitHub using `gh repo create ... --public --source=. --push`.
+8. Optionally create and push a version tag.
 
 ## Notes
 
